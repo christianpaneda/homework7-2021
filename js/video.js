@@ -60,16 +60,13 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	if (video.ended === false){
-		console.log("original location " + video.currentTime);
+	if (video.currentTime < (video.duration - 15)){
+		console.log("original time " + video.currentTime);
 		video.currentTime += 15;
-		console.log("new location " + video.currentTime);
-		video.loop = true;
+		console.log("new time " + video.currentTime);
 	}
 	else{
+		video.currentTime = 0; 
 		video.play(); 
-		video.currentTime = 0;
-		console.log(video.currentTime);
-	}
-	
+	}	
 });
