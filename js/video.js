@@ -67,6 +67,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 	}
 	else{
 		video.currentTime = 0; 
-		video.play(); 
+		video.play();
+		console.log("new time " + video.currentTime);
 	}	
 });
